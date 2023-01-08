@@ -1,0 +1,46 @@
+Index: linux-3.10.49/crypto/testmgr.c
+===================================================================
+--- linux-3.10.49.orig/crypto/testmgr.c
++++ linux-3.10.49/crypto/testmgr.c
+@@ -34,6 +34,9 @@
+ #include <net/rtl/rtl_glue.h>
+ 
+ #include "../drivers/crypto/realtek/crypto_engine/rtl_ipsec.h"
++#else
++#define SMP_LOCK_IPSEC {}
++#define SMP_UNLOCK_IPSEC {}
+ #endif // CONFIG_CRYPTO_DEV_REALTEK
+ 
+ #ifdef CONFIG_CRYPTO_MANAGER_DISABLE_TESTS
+Index: linux-3.10.49/net/ipv4/ah4.c
+===================================================================
+--- linux-3.10.49.orig/net/ipv4/ah4.c
++++ linux-3.10.49/net/ipv4/ah4.c
+@@ -18,6 +18,11 @@
+ 
+ #include "../../drivers/crypto/realtek/crypto_engine/rtl_ipsec.h"
+ //#include "../../drivers/crypto/realtek/rtl_crypto_helper.h"
++#else
++#define SMP_LOCK_IPSEC {}
++#define SMP_UNLOCK_IPSEC {}
++#define SMP_LOCK_BH_IPSEC {}
++#define SMP_UNLOCK_BH_IPSEC {}
+ #endif // CONFIG_CRYPTO_DEV_REALTEK
+ 
+ extern int lock_ipsec_owner;
+Index: linux-3.10.49/net/ipv4/esp4.c
+===================================================================
+--- linux-3.10.49.orig/net/ipv4/esp4.c
++++ linux-3.10.49/net/ipv4/esp4.c
+@@ -23,6 +23,11 @@
+ 
+ #include "../../drivers/crypto/realtek/crypto_engine/rtl_ipsec.h"
+ //#include "../../drivers/crypto/realtek/rtl_crypto_helper.h"
++#else
++#define SMP_LOCK_IPSEC {}
++#define SMP_UNLOCK_IPSEC {}
++#define SMP_LOCK_BH_IPSEC {}
++#define SMP_UNLOCK_BH_IPSEC {}
+ #endif // CONFIG_CRYPTO_DEV_REALTEK
+ extern int lock_ipsec_owner;
+ extern spinlock_t lock_ipsec_engine;
