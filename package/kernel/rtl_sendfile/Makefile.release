@@ -44,6 +44,7 @@ define KernelPackage/rtl_sendfile
   SUBMENU:=Network Support
   TITLE:=rtl_sendfile fastpath
   FILES:=$(PKG_BUILD_DIR)/rtl_sendfile.ko
+  DEPENDS:=@TARGET_realtek_rtl8196e||@TARGET_realtek_rtl8881a||@TARGET_realtek_rtl819xd||@TARGET_rtkmips_rtl8198c||@TARGET_rtkmips_rtl8954e||@CONFIG_TARGET_rtkmipsel
   KCONFIG:=CONFIG_RTL_SENDFILE_PATCH=y
   AUTOLOAD:=$(call AutoLoad,50,rtl_sendfile)
 endef

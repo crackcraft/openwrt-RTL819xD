@@ -27,6 +27,7 @@ endif
 define KernelPackage/rtl_fs
   SUBMENU:=Filesystems
   TITLE:=Realtek High Performance NTFS/exFAT/HFS+ filesystem
+  DEPENDS:=@TARGET_rtkmips_rtl8198c
   FILES:=$(PKG_BUILD_DIR)/$(MODULE_TARGET)/jnl.ko
   FILES+=$(PKG_BUILD_DIR)/$(MODULE_TARGET)/ufsd.ko
   AUTOLOAD:=$(call AutoLoad,,ufsd)

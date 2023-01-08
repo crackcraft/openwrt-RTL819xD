@@ -40,7 +40,7 @@ define KernelPackage/rtl_dev_stats
   SUBMENU:=Network Support
   TITLE:=rtl dev stats driver
   FILES:=$(PKG_BUILD_DIR)/rtl_dev_stats.ko
-  DEPENDS:=+kmod-ipt-core +kmod-ipt-conntrack +kmod-ipt-nat +kmod-ppp +kmod-fastpath
+  DEPENDS:=+kmod-ipt-core +kmod-ipt-conntrack +kmod-ipt-nat +kmod-ppp +kmod-fastpath @TARGET_realtek_rtl8196e||@TARGET_realtek_rtl8881a||@TARGET_realtek_rtl819xd||@TARGET_rtkmips_rtl8198c||@TARGET_rtkmips_rtl8954e
   DEFAULT:=n
   KCONFIG:= \
 	CONFIG_RTL_819X=y \

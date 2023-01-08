@@ -43,6 +43,7 @@ endif
 define KernelPackage/rtl_nf
   SUBMENU:=Network Support
   TITLE:=rtl_nf driver
+  DEPENDS:=@TARGET_realtek_rtl8196e||@TARGET_realtek_rtl8881a||@TARGET_realtek_rtl819xd||@TARGET_rtkmips_rtl8198c||@TARGET_rtkmips_rtl8954e||@TARGET_rtkmipsel
   FILES:=$(PKG_BUILD_DIR)/rtl_nf.ko
   KCONFIG:=CONFIG_RTL_USB_IP_HOST_SPEEDUP=y
   AUTOLOAD:=$(call AutoLoad,50,rtl_nf)

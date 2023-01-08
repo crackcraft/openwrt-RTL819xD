@@ -44,7 +44,7 @@ define KernelPackage/fastpath
   SUBMENU:=Network Support
   TITLE:=fastpath driver
   FILES:=$(PKG_BUILD_DIR)/fastpath.ko
-  DEPENDS:=+kmod-ipt-core +kmod-ipt-conntrack +kmod-ipt-nat +kmod-ppp
+  DEPENDS:=+kmod-ipt-core +kmod-ipt-conntrack +kmod-ipt-nat +kmod-ppp @TARGET_realtek_rtl8196e||@TARGET_realtek_rtl8881a||@TARGET_realtek_rtl819xd||@TARGET_rtkmips_rtl8198c||@TARGET_rtkmips_rtl8954e||@CONFIG_TARGET_rtkmipsel_rtl8197f
   DEFAULT:=y
   KCONFIG:= \
 	CONFIG_RTL_819X \
