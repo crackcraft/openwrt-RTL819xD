@@ -1,0 +1,20 @@
+--- a/include/common.h
++++ b/include/common.h
+@@ -25,6 +25,7 @@
+ #include <string.h>
+ #include <fcntl.h>
+ #include <errno.h>
++#include <sys/sysmacros.h>
+ 
+ #ifndef PROGRAM_NAME
+ # error "You must define PROGRAM_NAME before including this header"
+--- a/mkfs.ubifs/mkfs.ubifs.h
++++ a/mkfs.ubifs/mkfs.ubifs.h
+@@ -54,6 +54,7 @@
+ #include <ctype.h>
+ #include <uuid/uuid.h>
+ #include <sys/file.h>
++#include <sys/sysmacros.h>
+ 
+ #include "libubi.h"
+ #include "defs.h"
