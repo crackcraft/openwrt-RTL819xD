@@ -1,0 +1,14 @@
+--- a/lib/ext2fs/ismounted.c
++++ b/lib/ext2fs/ismounted.c
+@@ -27,6 +27,11 @@
+ #ifdef HAVE_LINUX_MAJOR_H
+ #include <linux/major.h>
+ #endif /* HAVE_LINUX_MAJOR_H */
++#if HAVE_SYS_MKDEV_H
++#include <sys/sysmacros.h>
++#elif HAVE_SYS_SYSMACROS_H
++#include <sys/sysmacros.h>
++#endif
+ #endif /* HAVE_LINUX_LOOP_H */
+ #ifdef HAVE_MNTENT_H
+ #include <mntent.h>
