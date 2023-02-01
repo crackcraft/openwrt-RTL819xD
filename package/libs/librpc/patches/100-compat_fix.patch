@@ -147,7 +147,7 @@
  
 --- /dev/null
 +++ b/rpc/compat.h
-@@ -0,0 +1,53 @@
+@@ -0,0 +1,49 @@
 +#ifndef __UCLIBC_COMPAT_H
 +#define __UCLIBC_COMPAT_H
 +
@@ -164,16 +164,12 @@
 +#include <sys/poll.h>
 +#include <pthread.h>
 +
-+#ifdef __UCLIBC__
-+#include <bits/libc-lock.h>
-+#else
 +#undef __UCLIBC_MUTEX_STATIC
 +#undef __UCLIBC_MUTEX_LOCK
 +#undef __UCLIBC_MUTEX_UNLOCK
 +#define __UCLIBC_MUTEX_STATIC(M,I) static pthread_mutex_t M = I
 +#define __UCLIBC_MUTEX_LOCK(M) pthread_mutex_lock(&(M))
 +#define __UCLIBC_MUTEX_UNLOCK(M) pthread_mutex_unlock(&(M))
-+#endif
 +
 +#define smallint int
 +
