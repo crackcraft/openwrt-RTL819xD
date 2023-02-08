@@ -23,3 +23,10 @@
 .emacs.desktop*
 TAGS*~
 git-src
+/Packages
+/Packages.gz
+# realtek patches mixsture
+/package/network/services/samba36/patches/920-rtl_sendfile-samba.patch
+/package/system/mountd/patches/1000-auto-mount_rtl-fs.patch
+/package/system/mountd/patches/1001-chk-metadata-and-exfat-support.patch
+/package/system/fstools/patches/0001-mount_root-fix-jffs2-nandflash-read-cleanmarker.patch
